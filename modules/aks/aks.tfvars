@@ -1,0 +1,13 @@
+law_name     = "law-sample-aks-demo"
+amw_name     = "amw-sample-aks-demo"
+grafana_name = "graf-sample-aks-demo"
+acr_name     = "imagerepo001"
+aks_name     = "sample_aks_demo_cluster001"
+dns_prefix   = "sample_aks_demo_cluster001"
+os_disk_size = 64
+min_count = 1
+max_count = 2
+image_cleaner_interval = 48
+zones = [1]
+kubernetes_version = "1.34.7"
+vm_size = "Standard_D2ps_v6"
