@@ -20,7 +20,7 @@ env:
 jobs:
   setup-backend:
     runs-on: ubuntu-latest
-    # environment: production
+    environment: production
 
     steps:
       - name: Checkout repo
