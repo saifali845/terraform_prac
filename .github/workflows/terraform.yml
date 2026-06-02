@@ -92,6 +92,7 @@ jobs:
               --account-key "$ARM_ACCESS_KEY"
           fi
 
+    
   # ========================
   # 2. Terraform Plan
   # ========================
@@ -113,6 +114,11 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+
+      - name: Debug workspace
+        run: |
+          pwd
+          ls -R
 
       - name: Terraform Init with Remote Backend
         working-directory: ${{ env.TF_WORKING_DIR }}
