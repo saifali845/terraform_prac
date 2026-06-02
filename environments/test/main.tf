@@ -1,5 +1,5 @@
 module "vm" {
-  source = "./terraform_prac/modules/aks"
+  source = "./modules/aks"
 
 
   resource_group_name = var.resource_group
