@@ -1,5 +1,5 @@
 module "vm" {
-  source = "./modules/aks"
+  source = "../modules/aks"
 
 
   resource_group_name = var.resource_group
@@ -22,7 +22,7 @@ module "vm" {
 }
 
 module "aks" {
-  source = "modules/aks"
+  source = "../modules/aks"
 
 
   resource_group_name = var.resource_group
