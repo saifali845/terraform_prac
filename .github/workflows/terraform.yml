@@ -118,7 +118,7 @@ jobs:
       - name: Debug workspace
         run: |
           pwd
-          ls -R
+          ls -ltr
 
       - name: Terraform Init with Remote Backend
         working-directory: ${{ env.TF_WORKING_DIR }}
