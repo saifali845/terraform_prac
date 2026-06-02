@@ -17,7 +17,7 @@ module "vm" {
   vm_size = var.vm_size
 
   admin_username      = var.admin_username
-  public_key = file(".ssh/id_rsa.pub")
+  public_key = file("../../id_rsa.pub")
 
 }
 
