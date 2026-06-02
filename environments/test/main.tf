@@ -1,5 +1,5 @@
 module "vm" {
-  source = "C:\\Users\\S5286370\\OneDrive - Saint-Gobain\\Documents\\demo_prac\\terraform\\modules\\vm"
+  source = "modules/aks"
 
 
   resource_group_name = var.resource_group
@@ -17,12 +17,12 @@ module "vm" {
   vm_size = var.vm_size
 
   admin_username      = var.admin_username
-  public_key = file("C:\\Users\\S5286370/.ssh/id_rsa.pub")
+  public_key = file(".ssh/id_rsa.pub")
 
 }
 
 module "aks" {
-  source = "C:\\Users\\S5286370\\OneDrive - Saint-Gobain\\Documents\\demo_prac\\terraform\\modules\\aks"
+  source = "modules/aks"
 
 
   resource_group_name = var.resource_group
