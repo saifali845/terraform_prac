@@ -6,6 +6,10 @@ on:
       - main
   pull_request:
 
+permissions:
+  id-token: write
+  contents: read
+
 env:
   RESOURCE_GROUP: tfstate-rg
   STORAGE_ACCOUNT: tfstate${{ github.run_id }}
