@@ -15,7 +15,7 @@ env:
   STORAGE_ACCOUNT: tfstate${{ github.run_id }}
   CONTAINER_NAME: tfstate
   LOCATION: CentralIndia
-  TF_WORKING_DIR: terraform_prac/terraform_prac/environments/test
+  TF_WORKING_DIR: /environments/test
 
 jobs:
   setup-backend:
