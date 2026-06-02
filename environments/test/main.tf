@@ -22,7 +22,7 @@ module "vm" {
 }
 
 module "aks" {
-  source = "../../modules/vm"
+  source = "../../modules/aks"
 
 
   resource_group_name = var.resource_group
