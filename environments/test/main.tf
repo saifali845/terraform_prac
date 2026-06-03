@@ -24,7 +24,7 @@ module "vm" {
 module "aks" {
   source = "../../modules/aks"
   
-  resource_group_name = module.vm.resource_group_name
+  resource_group_name = module.vm.resource_group
 
   law_name     = var.law_name
   amw_name     = var.amw_name
