@@ -13,7 +13,7 @@ permissions:
 
 env:
   RESOURCE_GROUP: tfstate-rg
-  STORAGE_ACCOUNT: tfstate${{ github.run_id }}
+  STORAGE_ACCOUNT: tfstate0711
   CONTAINER_NAME: tfstate
   LOCATION: CentralIndia
   TF_WORKING_DIR: /home/runner/work/terraform_prac/terraform_prac/environments/test/
