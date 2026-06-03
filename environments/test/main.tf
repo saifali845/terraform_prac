@@ -23,8 +23,7 @@ module "vm" {
 
 module "aks" {
   source = "../../modules/aks"
-
-
+  depends_on = [module.vm]
   resource_group_name = var.resource_group
 
   law_name     = var.law_name
