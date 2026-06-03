@@ -42,6 +42,12 @@ jobs:
             -backend-config="container_name=$CONTAINER_NAME" \
             -backend-config="key=terraform.tfstate"
 
+      - name: Terraform Destroy Plan
+        working-directory: ${{ env.TF_WORKING_DIR }}
+        run: |
+            terraform plan -destroy \
+            --var-file=var.tfvars 
+
       - name: Terraform Destroy (Manual Confirm)
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform destroy --var-file=var.tfvars --auto-approve
