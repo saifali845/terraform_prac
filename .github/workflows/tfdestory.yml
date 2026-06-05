@@ -51,3 +51,12 @@ jobs:
       - name: Terraform Destroy (Manual Confirm)
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: terraform destroy --var-file=var.tfvars --auto-approve
+
+      - name: Delete Resource Group
+        run: |
+          if az group show --name $RESOURCE_GROUP > /dev/null 2>&1; then
+            echo "Deleting resource group..."
+            az group delete --name $RESOURCE_GROUP --yes --no-wait
+          else
+            echo "Resource group does not exist"
+          fi
