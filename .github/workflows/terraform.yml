@@ -98,6 +98,12 @@ jobs:
     needs: setup-backend        # ✅ Runs after backend is ready
     environment: production
 
+    permissions:                         # ✅ Must be set at JOB level explicitly
+      id-token: write
+      contents: read
+      security-events: write             # ✅ Required for SARIF upload
+      actions: read  
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -118,10 +124,11 @@ jobs:
         continue-on-error: true   # Change to false to enforce hard block #Remove this line to BLOCK pipeline on failures
 
       - name: Upload SARIF to GitHub Security Tab
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         if: always()              # ✅ Upload results even if scan finds issues
         with:
           sarif_file: checkov-results.sarif
+          category: checkov-terraform
 
       - name: Upload Checkov Results as Artifact
         uses: actions/upload-artifact@v4
