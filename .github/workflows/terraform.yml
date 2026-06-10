@@ -142,7 +142,7 @@ jobs:
   # ========================
   terraform-plan:
     runs-on: ubuntu-latest
-    needs: setup-backend
+    needs: checkov-scan
     environment: production
 
     steps:
