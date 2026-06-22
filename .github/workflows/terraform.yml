@@ -196,9 +196,9 @@ jobs:
           name: tfplan
           path: ${{ env.TF_WORKING_DIR }}/tfplan
 
-  ========================
-  3. Terraform Apply (Manual Approval)
-  ========================
+  # ========================
+  # 3. Terraform Apply (Manual Approval)
+  # ========================
   terraform-apply:
     runs-on: ubuntu-latest
     needs: terraform-plan
